@@ -1,13 +1,12 @@
 import * as inquirer from 'inquirer';
+import chalk from "chalk";
 const prompt = inquirer.createPromptModule();
 let number1: number;
 let number2: number;
 let operator: "+"|"-"|"*"|"/";
 
 
-console.log(`
-    S I M P L E   C A L C U L A T O R
-`)
+console.log(chalk.bgWhiteBright(chalk.blackBright(chalk.bold(`S I M P L E   C A L C U L A T O R  ❗`))))
 function operand1(): void{
     prompt([
         {
@@ -23,11 +22,11 @@ function operand1(): void{
                 number1 = parseInt(answer["num1"])
                 operatorFunc();
             } else {
-                console.error(`only numbers are allowed`);
+                console.error(chalk.red(`only numbers are allowed`));
                 operand1();
             }
         } else {
-            console.log("invalid operation")
+            console.log(chalk.red("invalid operation"))
             operand1();
         }
     })
@@ -42,13 +41,8 @@ function operatorFunc(): void{
             choices: ["+", "-", "*", "/"]
         }
     ]).then(answer => {
-        if(answer["operator"] != ""){
             operator = answer["operator"]
             operand2();
-        } else {
-            console.log("enter valid")
-            operand1();
-        }
     })
 }
 
@@ -65,15 +59,13 @@ function operand2(): void {
             let check: boolean = isNumber(answer["num2"]);
             if(check){
                 number2 = parseInt(answer["num2"])
-                console.log(calculator(number1, number2, operator));
+                console.log(chalk.green(calculator(number1, number2, operator)));
             } else {
-                console.error(`only numbers are allowed`);
-                operand1();
+                console.error(chalk.red(`only numbers are allowed`));
             }
-            
             operand1();
         } else {
-            console.log("invalid operation")
+            console.log(chalk.red("invalid operation"))
         }
     })
 }
