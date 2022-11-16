@@ -6,7 +6,7 @@ let number2: number;
 let operator: "+"|"-"|"*"|"/";
 
 
-console.log(chalk.bgWhiteBright(chalk.blackBright(chalk.bold(`S I M P L E   C A L C U L A T O R  ❗`))))
+console.log(chalk.bgWhiteBright(chalk.blackBright(chalk.bold(`  S I M P L E   C A L C U L A T O R  ❗`))))
 function operand1(): void{
     prompt([
         {
@@ -22,11 +22,11 @@ function operand1(): void{
                 number1 = parseInt(answer["num1"])
                 operatorFunc();
             } else {
-                console.error(chalk.red(`only numbers are allowed`));
+                console.error(chalk.redBright(`only numbers are allowed`));
                 operand1();
             }
         } else {
-            console.log(chalk.red("invalid operation"))
+            console.log(chalk.redBright("invalid operation"))
             operand1();
         }
     })
@@ -61,28 +61,33 @@ function operand2(): void {
                 number2 = parseInt(answer["num2"])
                 console.log(chalk.green(calculator(number1, number2, operator)));
             } else {
-                console.error(chalk.red(`only numbers are allowed`));
+                console.error(chalk.redBright(`only numbers are allowed`));
             }
             operand1();
         } else {
-            console.log(chalk.red("invalid operation"))
+            console.log(chalk.redBright("invalid operation"))
         }
     })
 }
 
 function calculator(num1: number, num2: number, operator: string) {
+    let result: number;
     switch (operator) {
         case "+":
-            return num1 + num2
+            result = num1+num2;
+            return `${number1} + ${number2} = ${result}`
             break;
         case "-":
-            return num1 - num2
+            result = num1-num2;
+            return `${number1} - ${number2} = ${result}`
             break;
         case "*":
-            return num1 * num2
+            result = num1*num2;
+            return `${number1} x ${number2} = ${result}`
             break;
         case "/":
-            return num1 / num2
+            result = num1/num2;
+            return `${number1} / ${number2} = ${result}`
             break;
         default:
             return "invalid"
