@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 import * as inquirer from 'inquirer';
 import chalk from "chalk";
 const prompt = inquirer.createPromptModule();
@@ -19,7 +17,7 @@ function operand1() {
         if (answer["num1"] != "") {
             let check = isNumber(answer["num1"]);
             if (check) {
-                number1 = parseInt(answer["num1"]);
+                number1 = parseFloat(answer["num1"]);
                 operatorFunc();
             }
             else {
@@ -58,7 +56,7 @@ function operand2() {
         if (answer["num2"] != "") {
             let check = isNumber(answer["num2"]);
             if (check) {
-                number2 = parseInt(answer["num2"]);
+                number2 = parseFloat(answer["num2"]);
                 console.log(chalk.green(calculator(number1, number2, operator)));
             }
             else {

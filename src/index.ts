@@ -19,7 +19,7 @@ function operand1(): void{
         if(answer["num1"] != ""){
             let check: boolean = isNumber(answer["num1"]);
             if(check){
-                number1 = parseInt(answer["num1"])
+                number1 = parseFloat(answer["num1"])
                 operatorFunc();
             } else {
                 console.error(chalk.redBright(`only numbers are allowed`));
@@ -58,7 +58,7 @@ function operand2(): void {
         if(answer["num2"] != ""){
             let check: boolean = isNumber(answer["num2"]);
             if(check){
-                number2 = parseInt(answer["num2"])
+                number2 = parseFloat(answer["num2"])
                 console.log(chalk.green(calculator(number1, number2, operator)));
             } else {
                 console.error(chalk.redBright(`only numbers are allowed`));
