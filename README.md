@@ -2,5 +2,5 @@
  TypeScript Command Line Calculator
 
  ```
- npx calculator
+ npx calculatorr
  ```
