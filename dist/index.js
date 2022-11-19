@@ -1,10 +1,10 @@
+#! /usr/bin/env node
 import * as inquirer from 'inquirer';
 import chalk from "chalk";
 const prompt = inquirer.createPromptModule();
 let number1;
 let number2;
 let operator;
-console.log(chalk.bgWhiteBright(chalk.blackBright(chalk.bold(`  S I M P L E   C A L C U L A T O R  ❗`))));
 function operand1() {
     prompt([
         {
