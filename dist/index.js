@@ -5,6 +5,7 @@ const prompt = inquirer.createPromptModule();
 let number1;
 let number2;
 let operator;
+console.log(chalk.cyanBright(`Command Line Calculator`));
 function operand1() {
     prompt([
         {
